@@ -1,6 +1,9 @@
 const Express = require("express");
 const products = require("./products.json");
 
+// ENVIRONMENT VARIABLES CONFIG
+require('dotenv').config();
+
 // STEP 1: Create a API SERVER
 const API_SERVER = Express();
 
@@ -84,7 +87,7 @@ API_SERVER.post("/products/create", function (request, response) {
 
 
 // STEP 2: START AND LISTEN INCOMING REQUEST TO THIS SERVER
-API_SERVER.listen(3000, "localhost", function () {
+API_SERVER.listen(process.env.PORT, process.env.HOSTNAME, function () {
     console.log("Server started");
-    console.log(`http://localhost:3000`)
+    console.log(`http://${process.env.HOSTNAME}:${process.env.PORT}`)
 });

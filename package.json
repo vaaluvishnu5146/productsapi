@@ -10,6 +10,7 @@
   "author": "vishnu",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "productsapi": "file:",

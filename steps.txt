@@ -1,0 +1,2 @@
+1. Checking Node version: node -v
+2. Create bare node project: npm init

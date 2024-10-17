@@ -1,0 +1,18 @@
+{
+  "name": "productsapi",
+  "version": "1.0.0",
+  "description": "Building simple filesystem",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vishnu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "productsapi": "file:",
+    "simplefilesystem": "file:"
+  }
+}

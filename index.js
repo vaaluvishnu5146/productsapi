@@ -1,5 +1,12 @@
 const Express = require("express");
 const products = require("./products.json");
+const OrdersController = require("./controller/Orders.controller");
+const ProductsController = require("./controller/Products.controller");
+const RecipesController = require("./controller/Recipes.controller");
+const {createDbConnection} = require('./db');
+
+// CREATE DB CONNECTION
+createDbConnection();
 
 // ENVIRONMENT VARIABLES CONFIG
 require('dotenv').config();
@@ -12,6 +19,12 @@ API_SERVER.use(Express.json());
 
 // SERVING STATIC FILES
 API_SERVER.use(Express.static('public'));
+
+
+// INJECT ROUTERS
+API_SERVER.use("/orders", OrdersController)
+API_SERVER.use("/products", ProductsController)
+API_SERVER.use("/recipes", RecipesController)
 
 // ROUTE 1: /
 API_SERVER.get("/", function (request, response) {
